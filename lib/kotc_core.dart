@@ -1,13 +1,14 @@
 library kotc_core;
 
 import 'package:dio/dio.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 
-part 'src/game_mode/timed_mode/api.dart';
+part 'src/questions/response.dart';
 
-part 'src/game_mode/timed_mode/request.dart';
+part 'src/questions/api.dart';
 
-part 'src/game_mode/timed_mode/response.dart';
+part 'src/questions/models.dart';
 
 part 'kotc_core.g.dart';
 
@@ -15,7 +16,7 @@ class Api {
   static final client = Dio(
     BaseOptions(
       headers: {"Content-Type": "application/json"},
-      baseUrl: 'https://api.kingofthecurve.org/',
+      baseUrl: 'http://192.168.100.205:5000',
       connectTimeout: 50000,
       receiveTimeout: 50000,
     ),
