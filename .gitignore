@@ -14,6 +14,7 @@
 *.ipr
 *.iws
 *.g.dart
+*.lock
 .idea/
 
 # The .vscode folder contains launch configuration and tasks you configure in

@@ -10,6 +10,8 @@ part 'src/questions/api.dart';
 
 part 'src/questions/models.dart';
 
+part 'src/questions/request.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
