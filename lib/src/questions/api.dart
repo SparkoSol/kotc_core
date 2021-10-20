@@ -7,4 +7,11 @@ abstract class QuestionsApi {
   @GET('/questions/mode/{mode}/user/{user}')
   Future<List<QuestionResponse>> getQuestions(
       @Path('mode') String mode, @Path('user') String user);
+
+  @GET('/question-of-the-day')
+  Future<QuestionOfTheDay> getQuestionsOfTheDay();
+
+  @GET('/questions/category/{id}')
+  Future<QuestionResponse> getMultiplayerQuestion(
+      @Path('id') String categoryId);
 }

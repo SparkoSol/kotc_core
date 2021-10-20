@@ -1,18 +1,6 @@
 part of kotc_core;
 
 @JsonSerializable(includeIfNull: false)
-class Category {
-  final String id;
-  final String name;
-
-  Category({required this.id, required this.name});
-
-  Map<String, dynamic> toJson() => _$CategoryToJson(this);
-
-  factory Category.fromJson(json) => _$CategoryFromJson(json);
-}
-
-@JsonSerializable(includeIfNull: false)
 class SubCategory {
   final String id;
   final String name;

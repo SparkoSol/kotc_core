@@ -8,7 +8,7 @@ class QuestionResponse {
   final String type;
   final String statement;
   final List<String>? options;
-  final Category category;
+  final SubCategory category;
   final SubCategory subCategory;
   final String explanation;
   final List<String> images;
@@ -34,4 +34,21 @@ class QuestionResponse {
   });
 
   factory QuestionResponse.fromJson(json) => _$QuestionResponseFromJson(json);
+}
+
+@JsonSerializable(
+    includeIfNull: false, createToJson: false, explicitToJson: true)
+class QuestionOfTheDay {
+  final String id;
+  final String createdAt;
+  final String updatedAt;
+  final List<QuestionResponse> questions;
+
+  QuestionOfTheDay({
+    required this.id,
+    required this.updatedAt,
+    required this.createdAt,
+    required this.questions,
+  });
+  factory QuestionOfTheDay.fromJson(json) => _$QuestionOfTheDayFromJson(json);
 }
