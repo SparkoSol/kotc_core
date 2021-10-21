@@ -3,6 +3,7 @@ library kotc_core;
 import 'package:dio/dio.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'src/questions/response.dart';
 
@@ -15,6 +16,12 @@ part 'src/questions/request.dart';
 part 'src/categories/api.dart';
 
 part 'src/categories/response.dart';
+
+part 'src/scores/api.dart';
+
+part 'src/scores/models.dart';
+
+part 'src/common/response.dart';
 
 part 'kotc_core.g.dart';
 
