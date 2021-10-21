@@ -14,4 +14,8 @@ abstract class QuestionsApi {
   @GET('/questions/category/{id}')
   Future<QuestionResponse> getMultiplayerQuestion(
       @Path('id') String categoryId);
+
+  @POST('/questions/list')
+  Future<List<QuestionResponse>> getQuestionsFromList(
+      @Body() QuestionsRequest request);
 }
