@@ -23,6 +23,8 @@ part 'src/scores/models.dart';
 
 part 'src/common/response.dart';
 
+part 'src/scores/response.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
