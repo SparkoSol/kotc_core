@@ -28,6 +28,6 @@ abstract class ScoresApi {
   @POST('/timed-mode-scores')
   Future<SimpleResponse> addTimedModeScores(@Body() ModeScores score);
 
-  @GET('questions/stats/user/{user}')
+  @GET('/questions/stats/user/{user}')
   Future<List<UserStats>> getUserStats(@Path('user') String userId);
 }

@@ -5,7 +5,7 @@ class UserStats {
   String category;
   String categoryId;
   double overallPercentage;
-  Map<String, double> subcategories;
+  Map<String, double>? subcategories;
 
   UserStats({
     required this.categoryId,
