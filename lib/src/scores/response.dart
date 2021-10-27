@@ -4,8 +4,8 @@ part of kotc_core;
 class UserStats {
   String category;
   String categoryId;
-  int overallPercentage;
-  Map<String, int> subcategories;
+  double overallPercentage;
+  Map<String, double> subcategories;
 
   UserStats({
     required this.categoryId,
