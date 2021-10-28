@@ -8,6 +8,9 @@ abstract class QuestionsApi {
   Future<List<QuestionResponse>> getQuestions(
       @Path('mode') String mode, @Path('user') String user);
 
+  @POST('/questions/toggle-bookmark')
+  Future<dynamic> toggleBookMark(@Body() ToggleRequest toggleRequest);
+
   @GET('/question-of-the-day')
   Future<QuestionOfTheDay> getQuestionsOfTheDay();
 

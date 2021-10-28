@@ -15,3 +15,13 @@ class QuestionsRequest {
 
   Map<String, dynamic> toJson() => _$QuestionsRequestToJson(this);
 }
+
+@JsonSerializable(includeIfNull: false, createFactory: false)
+class ToggleRequest {
+  final String user;
+  final String question;
+
+  ToggleRequest({required this.user, required this.question});
+
+  Map<String, dynamic> toJson() => _$ToggleRequestToJson(this);
+}
