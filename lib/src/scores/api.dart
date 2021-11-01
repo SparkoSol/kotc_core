@@ -30,4 +30,16 @@ abstract class ScoresApi {
 
   @GET('/questions/stats/user/{user}')
   Future<List<UserStats>> getUserStats(@Path('user') String userId);
+
+  @GET('/timed-mode-scores/high-score/{user}')
+  Future<int> getTimedModeHighScore(@Path('user') String userId);
+
+  @GET('/qbank-mode-scores/high-score/{user}')
+  Future<int> getQBankModeHighScore(@Path('user') String userId);
+
+  @GET('/endless-mode-scores/high-score/{user}')
+  Future<int> getEndlessModeHighScore(@Path('user') String userId);
+
+  @GET('/review-mode-scores/high-score/{user}')
+  Future<int> getReviewModeHighScore(@Path('user') String userId);
 }
