@@ -25,6 +25,10 @@ part 'src/common/response.dart';
 
 part 'src/scores/response.dart';
 
+part 'src/logs/api.dart';
+
+part 'src/logs/requests.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
