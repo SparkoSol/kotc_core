@@ -6,4 +6,7 @@ abstract class CategoriesApi {
 
   @GET('/categories')
   Future<List<Category>> getCategories();
+
+  @GET('/subcategories')
+  Future<List<SubCategory>> getSubCategories();
 }
