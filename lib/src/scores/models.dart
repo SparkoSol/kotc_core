@@ -7,12 +7,14 @@ class ModeScores {
   final String userId;
   int score;
   final List<ModeAnswers> answers;
+  int type;
 
   ModeScores({
     this.id,
     required this.score,
     required this.userId,
     required this.answers,
+    required this.type,
   });
 
   Map<String, dynamic> toJson() => _$ModeScoresToJson(this);

@@ -1,6 +1,7 @@
 library kotc_core;
 
 import 'package:dio/dio.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -35,7 +36,8 @@ class Api {
   static final client = Dio(
     BaseOptions(
       headers: {"Content-Type": "application/json"},
-      baseUrl: 'http://192.168.100.205:5000',
+      // baseUrl: 'http://192.168.100.205:5000',
+      baseUrl: 'https://api.kingofthecurve.org/v2',
       connectTimeout: 50000,
       receiveTimeout: 50000,
     ),
