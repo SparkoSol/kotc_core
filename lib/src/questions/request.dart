@@ -5,6 +5,7 @@ const Map<String, String> questionsType = {
   'review_mode': 'v2_review_mode_preferences',
   'timed_mode': 'v2_timed_mode_preferences',
   'qBank_mode': 'v2_qbank_preferences',
+  'bool_mode': 'v2_boolean_blitz_preferences',
 };
 
 @JsonSerializable(includeIfNull: false, createFactory: false)
