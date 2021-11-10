@@ -12,4 +12,8 @@ abstract class UserStatsApi {
 
   @GET('/user-stats/leaderboard/{mode}')
   Future<List<LeaderBoardStat>> getLeaderBoard(@Path('mode') int mode);
+
+  @GET('/user-stats/top-hundred/{mode}/{user}')
+  Future<bool> isInTopHundred(
+      @Path('mode') int mode, @Path('user') String userId);
 }
