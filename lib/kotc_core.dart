@@ -1,7 +1,6 @@
 library kotc_core;
 
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -29,6 +28,12 @@ part 'src/scores/response.dart';
 part 'src/logs/api.dart';
 
 part 'src/logs/requests.dart';
+
+part 'src/stats/api.dart';
+
+part 'src/stats/responses.dart';
+
+part 'src/stats/models.dart';
 
 part 'kotc_core.g.dart';
 
