@@ -26,3 +26,28 @@ class ToggleRequest {
 
   Map<String, dynamic> toJson() => _$ToggleRequestToJson(this);
 }
+
+@JsonSerializable(includeIfNull: false, createFactory: false)
+class ContributeQuestionsRequest {
+  final int status;
+  final int answer;
+  final String type;
+  final String statement;
+  final List<String> options;
+  final SubCategory category;
+  final SubCategory subCategory;
+  final String explanation;
+
+  ContributeQuestionsRequest({
+    this.status = 0,
+    required this.category,
+    required this.answer,
+    required this.explanation,
+    required this.options,
+    required this.statement,
+    required this.subCategory,
+    required this.type,
+  });
+
+  Map<String, dynamic> toJson() => _$ContributeQuestionsRequestToJson(this);
+}

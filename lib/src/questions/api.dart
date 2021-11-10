@@ -21,4 +21,7 @@ abstract class QuestionsApi {
   @POST('/questions/list')
   Future<List<QuestionResponse>> getQuestionsFromList(
       @Body() QuestionsRequest request);
+
+  @POST('/contributed-questions')
+  Future addContributeQuestion(@Body() ContributeQuestionsRequest request);
 }
