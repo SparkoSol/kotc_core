@@ -16,6 +16,7 @@ class QuestionResponse {
   final List<String> pdfs;
   final String createdAt;
   final String updatedAt;
+  final List<double>? percentage;
 
   QuestionResponse({
     required this.category,
@@ -31,6 +32,7 @@ class QuestionResponse {
     required this.type,
     required this.updatedAt,
     required this.videos,
+    this.percentage,
   });
 
   factory QuestionResponse.fromJson(json) => _$QuestionResponseFromJson(json);
