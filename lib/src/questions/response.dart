@@ -1,7 +1,6 @@
 part of kotc_core;
 
-@JsonSerializable(
-    includeIfNull: false, createToJson: false, explicitToJson: true)
+@JsonSerializable(includeIfNull: false, createToJson: false)
 class QuestionResponse {
   final String id;
   final int answer;
@@ -52,5 +51,6 @@ class QuestionOfTheDay {
     required this.createdAt,
     required this.questions,
   });
+
   factory QuestionOfTheDay.fromJson(json) => _$QuestionOfTheDayFromJson(json);
 }

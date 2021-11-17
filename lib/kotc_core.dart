@@ -35,6 +35,12 @@ part 'src/stats/responses.dart';
 
 part 'src/stats/models.dart';
 
+part 'src/institutions/api.dart';
+
+part 'src/institutions/models.dart';
+
+part 'src/institutions/responses.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
