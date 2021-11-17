@@ -3,17 +3,17 @@ part of kotc_core;
 @JsonSerializable(includeIfNull: false)
 class InstituteModel {
   final String? id;
-  final String name;
+  final String? name;
   @JsonKey(name: 'alpha_two_code')
-  final String alphaTwoCode;
+  final String? alphaTwoCode;
   @JsonKey(name: 'state-province')
-  final String stateProvince;
-  final String country;
+  final String? stateProvince;
+  final String? country;
   @JsonKey(name: 'is_verified')
   final bool? isVerified;
-  final List<String> domains;
+  final List<String>? domains;
   @JsonKey(name: 'web_pages')
-  final List<String> webPages;
+  final List<String>? webPages;
 
   InstituteModel({
     this.id,

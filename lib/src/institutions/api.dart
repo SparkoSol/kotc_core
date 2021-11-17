@@ -14,7 +14,7 @@ abstract class InstitutionsApi {
   @GET('/institutions/{domain}')
   Future<InstituteModel> findInstitute(@Path('domain') String domain);
 
-  @GET('/institutions/link-institute-email/{domain}/{id}')
+  @POST('/institutions/link-institute-email/{domain}/{id}')
   Future linkInstitute(
     @Path('domain') String domain,
     @Path('id') String userId,
