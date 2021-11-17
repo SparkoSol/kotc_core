@@ -17,6 +17,8 @@ class QuestionResponse {
   final String updatedAt;
   final List<double>? percentage;
 
+  factory QuestionResponse.fromJson(json) => _$QuestionResponseFromJson(json);
+
   QuestionResponse({
     required this.category,
     required this.id,
@@ -33,8 +35,6 @@ class QuestionResponse {
     required this.videos,
     this.percentage,
   });
-
-  factory QuestionResponse.fromJson(json) => _$QuestionResponseFromJson(json);
 }
 
 @JsonSerializable(
@@ -53,4 +53,19 @@ class QuestionOfTheDay {
   });
 
   factory QuestionOfTheDay.fromJson(json) => _$QuestionOfTheDayFromJson(json);
+}
+
+@JsonSerializable(includeIfNull: false, createToJson: false)
+class BookMarkResponse {
+  final String id;
+  final List<String> questions;
+  final String user;
+
+  BookMarkResponse({
+    required this.id,
+    required this.user,
+    required this.questions,
+  });
+
+  factory BookMarkResponse.fromJson(json) => _$BookMarkResponseFromJson(json);
 }

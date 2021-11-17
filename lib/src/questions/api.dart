@@ -8,8 +8,11 @@ abstract class QuestionsApi {
   Future<List<QuestionResponse>> getQuestions(
       @Path('mode') String mode, @Path('user') String user);
 
-  @POST('/questions/toggle-bookmark')
+  @POST('/question-bookmarks/toggle-bookmark')
   Future<dynamic> toggleBookMark(@Body() ToggleRequest toggleRequest);
+
+  @GET('/question-bookmarks/user/{id}')
+  Future<BookMarkResponse> fetchBookMarks(@Path('id') String userId);
 
   @GET('/question-of-the-day')
   Future<QuestionOfTheDay> getQuestionsOfTheDay();
