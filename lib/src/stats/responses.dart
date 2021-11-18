@@ -22,6 +22,8 @@ class LeaderBoardStat {
 @JsonSerializable(includeIfNull: false, createToJson: false)
 class InstitutionalLeaderBoardStat {
   final int score;
+  final int win;
+  final int lost;
   final String name;
   @JsonKey(name: 'user-leaderboard')
   final List<LeaderBoardStat> usersLeaderboard;
@@ -30,6 +32,8 @@ class InstitutionalLeaderBoardStat {
     required this.name,
     required this.score,
     required this.usersLeaderboard,
+    required this.win,
+    required this.lost,
   });
 
   factory InstitutionalLeaderBoardStat.fromJson(json) =>
