@@ -1,11 +1,23 @@
 part of kotc_core;
 
-const Map<String, String> questionsType = {
-  'endless_mode': 'v2_endless_mode_preferences',
-  'review_mode': 'v2_review_mode_preferences',
-  'timed_mode': 'v2_timed_mode_preferences',
-  'qBank_mode': 'v2_qbank_preferences',
-  'bool_mode': 'v2_boolean_blitz_preferences',
+/// Used in app for game modes
+enum GameModeType {
+  endlessMode,
+  timedMode,
+  reviewMode,
+  qBankMode,
+  booleanBlitzMode,
+  qotdMode,
+  multiplayerMode,
+}
+
+/// To fetch questions
+const Map<GameModeType, String> questionsType = {
+  GameModeType.endlessMode: 'v2_endless_mode_preferences',
+  GameModeType.reviewMode: 'v2_review_mode_preferences',
+  GameModeType.timedMode: 'v2_timed_mode_preferences',
+  GameModeType.qBankMode: 'v2_qbank_preferences',
+  GameModeType.booleanBlitzMode: 'v2_boolean_blitz_preferences',
 };
 
 @JsonSerializable(includeIfNull: false, createFactory: false)
