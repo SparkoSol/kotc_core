@@ -14,6 +14,9 @@ abstract class QuestionsApi {
   @GET('/question-bookmarks/user/{id}')
   Future<BookMarkResponse> fetchBookMarks(@Path('id') String userId);
 
+  @GET('/question-bookmarks/count/user/{id}')
+  Future<int> fetchBookMarksLength(@Path('id') String userId);
+
   @GET('/question-of-the-day')
   Future<QuestionOfTheDay> getQuestionsOfTheDay();
 
