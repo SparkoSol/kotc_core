@@ -7,6 +7,9 @@ abstract class UserStatsApi {
   @GET('/user-stats/{user}')
   Future<UserOverallStats> getUserOverallStat(@Path('user') String userId);
 
+  @POST('/user-stats')
+  Future addUserStat(@Body() UserOverallStats userStat);
+
   @PATCH('/user-stats')
   Future updateUserStat(@Body() UserOverallStats userStat);
 

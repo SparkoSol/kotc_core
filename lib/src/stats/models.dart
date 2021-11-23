@@ -2,7 +2,7 @@ part of kotc_core;
 
 @JsonSerializable(includeIfNull: false)
 class UserOverallStats {
-  final String id;
+  final String? id;
   final String user;
   String name;
   int total;
@@ -27,7 +27,7 @@ class UserOverallStats {
   int boolHighScore;
 
   UserOverallStats({
-    required this.id,
+    this.id,
     required this.user,
     required this.name,
     required this.right,
