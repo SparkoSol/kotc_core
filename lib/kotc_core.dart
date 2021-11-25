@@ -2,6 +2,7 @@ library kotc_core;
 
 import 'package:dio/dio.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'dart:math' as math;
 import 'package:retrofit/retrofit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -40,6 +41,14 @@ part 'src/institutions/api.dart';
 part 'src/institutions/models.dart';
 
 part 'src/institutions/responses.dart';
+
+part 'src/quiz_mode/api.dart';
+
+part 'src/quiz_mode/models.dart';
+
+part 'src/quiz_mode/responses.dart';
+
+part 'src/pretty_dio_logger.dart';
 
 part 'kotc_core.g.dart';
 
