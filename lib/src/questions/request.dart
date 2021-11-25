@@ -46,6 +46,8 @@ class ContributeQuestionsRequest {
   final int answer;
   final String type;
   final String statement;
+  final String user;
+  final String email;
   final List<String> options;
   final SubCategory category;
   final SubCategory subCategory;
@@ -60,6 +62,8 @@ class ContributeQuestionsRequest {
     required this.statement,
     required this.subCategory,
     required this.type,
+    required this.user,
+    required this.email,
   });
 
   Map<String, dynamic> toJson() => _$ContributeQuestionsRequestToJson(this);

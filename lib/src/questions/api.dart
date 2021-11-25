@@ -24,7 +24,7 @@ abstract class QuestionsApi {
   Future<QuestionResponse> getMultiplayerQuestion(
       @Path('id') String categoryId);
 
-  @POST('/questions/list')
+  @POST('/question-of-the-day/list')
   Future<List<QuestionResponse>> getQuestionsFromList(
       @Body() QuestionsRequest request);
 
