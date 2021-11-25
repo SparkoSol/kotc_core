@@ -1,7 +1,6 @@
 part of kotc_core;
 
-@JsonSerializable(
-    includeIfNull: false, createToJson: false, explicitToJson: true)
+@JsonSerializable(includeIfNull: false, createToJson: false)
 class Category {
   final String id;
   final String name;

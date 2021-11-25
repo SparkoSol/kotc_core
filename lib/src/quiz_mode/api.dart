@@ -20,5 +20,5 @@ abstract class QuizModeApi {
   Future deleteUserQuiz(@Path('id') String id);
 
   @GET('/quiz-games/questions/{id}')
-  Future<List<QuestionResponse>> getQuizQuestions(@Path('id') String quizId);
+  Future<List<QuestionModel>> getQuizQuestions(@Path('id') String quizId);
 }

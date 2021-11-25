@@ -5,8 +5,18 @@ abstract class QuestionsApi {
   factory QuestionsApi() => _QuestionsApi(Api.client);
 
   @GET('/questions/mode/{mode}/user/{user}')
-  Future<List<QuestionResponse>> getQuestions(
+  Future<List<QuestionModel>> getQuestions(
       @Path('mode') String mode, @Path('user') String user);
+
+  @GET('/questions/{id}')
+  Future<QuestionModel> getOneQuestion(@Path('id') String questionId);
+
+  @PATCH('/questions')
+  Future updateOneQuestion(@Body() QuestionModel question);
+
+  @PATCH('/questions/add-comment/{id}')
+  Future addQuestionComment(
+      @Path('id') String questionId, @Body() QuestionComment request);
 
   @POST('/question-bookmarks/toggle-bookmark')
   Future<dynamic> toggleBookMark(@Body() ToggleRequest toggleRequest);
@@ -21,11 +31,11 @@ abstract class QuestionsApi {
   Future<QuestionOfTheDay> getQuestionsOfTheDay();
 
   @GET('/questions/category/{id}')
-  Future<QuestionResponse> getMultiplayerQuestion(
+  Future<QuestionModel> getMultiplayerQuestion(
       @Path('id') String categoryId);
 
   @POST('/question-of-the-day/list')
-  Future<List<QuestionResponse>> getQuestionsFromList(
+  Future<List<QuestionModel>> getQuestionsFromList(
       @Body() QuestionsRequest request);
 
   @POST('/contributed-questions')

@@ -47,7 +47,7 @@ class PreviousGameAnswer {
   @JsonKey(name: 'is_correct')
   final bool isCorrect;
   @JsonKey(name: 'question_id')
-  final QuestionResponse questionId;
+  final QuestionModel questionId;
   @JsonKey(name: 'subcategory_id')
   final String subcategoryId;
 
