@@ -9,6 +9,7 @@ enum GameModeType {
   booleanBlitzMode,
   qotdMode,
   multiplayerMode,
+  quizGameMode,
 }
 
 /// To fetch questions
