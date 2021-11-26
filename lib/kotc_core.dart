@@ -50,6 +50,10 @@ part 'src/quiz_mode/responses.dart';
 
 part 'src/pretty_dio_logger.dart';
 
+part 'src/comments/api.dart';
+
+part 'src/comments/models.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
