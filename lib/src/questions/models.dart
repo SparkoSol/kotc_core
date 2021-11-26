@@ -16,7 +16,6 @@ class QuestionModel {
   final String createdAt;
   final String updatedAt;
   final List<double>? percentage;
-  List<QuestionComment>? comments;
 
   QuestionModel({
     required this.category,
@@ -33,7 +32,6 @@ class QuestionModel {
     required this.updatedAt,
     required this.videos,
     this.percentage,
-    required this.comments,
   });
 
   Map<String, dynamic> toJson() => _$QuestionModelToJson(this);
@@ -51,25 +49,4 @@ class SubCategory {
   Map<String, dynamic> toJson() => _$SubCategoryToJson(this);
 
   factory SubCategory.fromJson(json) => _$SubCategoryFromJson(json);
-}
-
-@JsonSerializable(includeIfNull: false)
-class QuestionComment {
-  @JsonKey(name: 'user_id')
-  final String userId;
-  @JsonKey(name: 'username')
-  final String userName;
-  final String comment;
-  final String? createdAt;
-
-  QuestionComment({
-    this.createdAt,
-    required this.userId,
-    required this.userName,
-    required this.comment,
-  });
-
-  Map<String, dynamic> toJson() => _$QuestionCommentToJson(this);
-
-  factory QuestionComment.fromJson(json) => _$QuestionCommentFromJson(json);
 }
