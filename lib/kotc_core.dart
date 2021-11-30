@@ -54,6 +54,10 @@ part 'src/comments/api.dart';
 
 part 'src/comments/models.dart';
 
+part 'src/banners/api.dart';
+
+part 'src/banners/responses.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
