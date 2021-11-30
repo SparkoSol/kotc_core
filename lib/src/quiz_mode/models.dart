@@ -9,6 +9,11 @@ class QuizGameModeModel {
   int questionTypes;
   @JsonKey(name: 'is_timed')
   bool timed;
+  @JsonKey(name: 'is_tutor')
+  bool tutor;
+  int duration;
+  @JsonKey(name: 'subcategories')
+  List<SubCategory> selectedCategories;
 
   QuizGameModeModel({
     this.id,
@@ -16,6 +21,9 @@ class QuizGameModeModel {
     required this.name,
     required this.user,
     required this.questionTypes,
+    required this.tutor,
+    required this.duration,
+    required this.selectedCategories,
   });
 
   Map<String, dynamic> toJson() => _$QuizGameModeModelToJson(this);

@@ -49,4 +49,16 @@ class SubCategory {
   Map<String, dynamic> toJson() => _$SubCategoryToJson(this);
 
   factory SubCategory.fromJson(json) => _$SubCategoryFromJson(json);
+
+  @override
+  bool operator ==(Object other) {
+    if (other is SubCategory) {
+      return other.id == id;
+    }
+
+    return false;
+  }
+
+  @override
+  int get hashCode => id.hashCode;
 }
