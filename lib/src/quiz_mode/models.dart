@@ -14,6 +14,7 @@ class QuizGameModeModel {
   int duration;
   @JsonKey(name: 'subcategories')
   List<SubCategory> selectedCategories;
+  final String? createdAt;
 
   QuizGameModeModel({
     this.id,
@@ -24,6 +25,7 @@ class QuizGameModeModel {
     required this.tutor,
     required this.duration,
     required this.selectedCategories,
+    this.createdAt,
   });
 
   Map<String, dynamic> toJson() => _$QuizGameModeModelToJson(this);
