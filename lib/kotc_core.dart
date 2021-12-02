@@ -22,6 +22,10 @@ part 'src/scores/api.dart';
 
 part 'src/scores/models.dart';
 
+part 'src/common/api.dart';
+
+part 'src/common/requests.dart';
+
 part 'src/common/response.dart';
 
 part 'src/scores/response.dart';
