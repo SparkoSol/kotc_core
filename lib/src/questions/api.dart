@@ -31,8 +31,7 @@ abstract class QuestionsApi {
   Future<QuestionOfTheDay> getQuestionsOfTheDay();
 
   @GET('/questions/category/{id}')
-  Future<QuestionModel> getMultiplayerQuestion(
-      @Path('id') String categoryId);
+  Future<QuestionModel> getMultiplayerQuestion(@Path('id') String categoryId);
 
   @POST('/question-of-the-day/list')
   Future<List<QuestionModel>> getQuestionsFromList(
@@ -40,4 +39,7 @@ abstract class QuestionsApi {
 
   @POST('/contributed-questions')
   Future addContributeQuestion(@Body() ContributeQuestionsRequest request);
+
+  @POST('/flagged-questions')
+  Future addFlaggedQuestion(@Body() FlaggedQuestionRequest request);
 }

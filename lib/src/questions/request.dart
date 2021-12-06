@@ -68,3 +68,20 @@ class ContributeQuestionsRequest {
 
   Map<String, dynamic> toJson() => _$ContributeQuestionsRequestToJson(this);
 }
+
+@JsonSerializable(includeIfNull: false, createFactory: false)
+class FlaggedQuestionRequest {
+  @JsonKey(name: 'question_id')
+  final String questionId;
+  final String reason;
+  @JsonKey(name: 'user')
+  final String userId;
+
+  FlaggedQuestionRequest({
+    required this.reason,
+    required this.questionId,
+    required this.userId,
+  });
+
+  Map<String, dynamic> toJson() => _$FlaggedQuestionRequestToJson(this);
+}
