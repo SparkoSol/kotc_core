@@ -14,6 +14,8 @@ class QuizGameModeModel {
   int duration;
   @JsonKey(name: 'subcategories')
   List<SubCategory> selectedCategories;
+  @JsonKey(name: 'question_count')
+  int? questionCount;
   final String? createdAt;
 
   QuizGameModeModel({
@@ -25,6 +27,7 @@ class QuizGameModeModel {
     required this.tutor,
     required this.duration,
     required this.selectedCategories,
+    this.questionCount,
     this.createdAt,
   });
 
