@@ -66,10 +66,6 @@ part 'src/preferences/api.dart';
 
 part 'src/preferences/models.dart';
 
-part 'src/preferences/requests.dart';
-
-part 'src/preferences/responses.dart';
-
 part 'kotc_core.g.dart';
 
 class Api {
