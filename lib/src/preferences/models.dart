@@ -5,13 +5,20 @@ class PreferencesModel {
   final String? id;
   final List<String> categories;
   final List<String> subcategories;
+  @JsonKey(name: 'type')
   final int preferenceType;
+  @JsonKey(name: 'user_id')
   final String user;
-  final bool? showBoolQuestions;
-  final bool? showChoicesQuestions;
-  final bool? showEasyQuestions;
-  final bool? showMediumQuestions;
-  final bool? showHardQuestions;
+  @JsonKey(name: 'show_bool_questions')
+  bool? showBoolQuestions;
+  @JsonKey(name: 'show_choices_questions')
+  bool? showChoicesQuestions;
+  @JsonKey(name: 'show_easy_questions')
+  bool? showEasyQuestions;
+  @JsonKey(name: 'show_medium_questions')
+  bool? showMediumQuestions;
+  @JsonKey(name: 'show_hard_questions')
+  bool? showHardQuestions;
 
   PreferencesModel({
     this.id,
