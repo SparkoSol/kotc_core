@@ -4,8 +4,11 @@ part of kotc_core;
 abstract class QuizModeApi {
   factory QuizModeApi() => _QuizModeApi(Api.client);
 
-  @GET('/quiz-games/question-usage/{user}')
-  Future<QuestionsUsageStat> getQuestionUsageStat(@Path('user') String userId);
+  @GET('/quiz-games/question-usage/{user}/{mode}')
+  Future<QuestionsUsageStat> getQuestionUsageStat(
+    @Path('user') String userId,
+    @Path('mode') int mode,
+  );
 
   @GET('/quiz-games/user/{user}')
   Future<List<QuizGameModeModel>> getUserQuizzes(@Path('user') String userId);
