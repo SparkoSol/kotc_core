@@ -23,4 +23,28 @@ abstract class UserStatsApi {
   @GET('/user-stats/top-hundred/{mode}/{user}')
   Future<bool> isInTopHundred(
       @Path('mode') int mode, @Path('user') String userId);
+
+  @GET('/user-stats/user-dashboard')
+  Future<MultiplayerWinsLostResponse> getStatWinLost(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/user-dashboard')
+  Future<CorrectIncorrectResponse> getStatCorrectIncorrect(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/user-dashboard')
+  Future<GamesGraphResponse> getWeeklyGamesGraph(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/user-dashboard')
+  Future<ModeGamesGraphResponse> getGameModesGraph(
+    @Query('user') String userId,
+    @Query  ('mode') int mode,
+  );
 }
