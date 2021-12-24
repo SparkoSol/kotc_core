@@ -66,13 +66,17 @@ part 'src/preferences/api.dart';
 
 part 'src/preferences/models.dart';
 
+part 'src/passages_mode/api.dart';
+
+part 'src/passages_mode/response.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
   static final client = Dio(
     BaseOptions(
       headers: {"Content-Type": "application/json"},
-      // baseUrl: 'http://192.168.100.205:5000',
+      // baseUrl: 'http://192.168.100.144:5000',
       baseUrl: 'https://api.kingofthecurve.org/v2',
       connectTimeout: 50000,
       receiveTimeout: 50000,
