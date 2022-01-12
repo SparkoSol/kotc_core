@@ -5,6 +5,7 @@ class QuestionComment {
   final String? id;
   @JsonKey(name: 'question_id')
   final String questionId;
+  final QuestionModel? question;
   @JsonKey(name: 'user_id')
   final String userId;
   @JsonKey(name: 'username')
@@ -17,6 +18,7 @@ class QuestionComment {
     this.id,
     this.createdAt,
     this.reply,
+    this.question,
     required this.userId,
     required this.userName,
     required this.comment,
