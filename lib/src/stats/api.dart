@@ -16,6 +16,12 @@ abstract class UserStatsApi {
   @GET('/user-stats/leaderboard/{mode}')
   Future<List<LeaderBoardStat>> getLeaderBoard(@Path('mode') int mode);
 
+  @GET('/user-stats/leaderboard-new/{mode}/{user}')
+  Future<NewLeaderBoardStat> getNewLeaderBoard(
+    @Path('mode') int mode,
+    @Path('user') String userId,
+  );
+
   @GET('/user-stats/institutional-leaderboard/{mode}')
   Future<List<InstitutionalLeaderBoardStat>> getInstitutionalLeaderBoard(
       @Path('mode') int mode);
@@ -45,6 +51,6 @@ abstract class UserStatsApi {
   @GET('/user-stats/user-dashboard')
   Future<ModeGamesGraphResponse> getGameModesGraph(
     @Query('user') String userId,
-    @Query  ('mode') int mode,
+    @Query('mode') int mode,
   );
 }

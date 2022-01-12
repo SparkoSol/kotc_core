@@ -20,6 +20,20 @@ class LeaderBoardStat {
 }
 
 @JsonSerializable(includeIfNull: false, createToJson: false)
+class NewLeaderBoardStat {
+  final int position;
+  final List<LeaderBoardStat> leaderboard;
+
+  NewLeaderBoardStat({
+    required this.position,
+    required this.leaderboard,
+  });
+
+  factory NewLeaderBoardStat.fromJson(json) =>
+      _$NewLeaderBoardStatFromJson(json);
+}
+
+@JsonSerializable(includeIfNull: false, createToJson: false)
 class InstitutionalLeaderBoardStat {
   final int score;
   final int win;
