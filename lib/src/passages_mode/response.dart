@@ -6,6 +6,7 @@ class PassageQuestionResponse {
   final QuestionModel question;
   final String heading;
   final String passage;
+  final List<String>? images;
   final String createdAt;
 
   PassageQuestionResponse({
@@ -14,6 +15,7 @@ class PassageQuestionResponse {
     required this.createdAt,
     required this.question,
     required this.passage,
+    this.images,
   });
 
   factory PassageQuestionResponse.fromJson(json) =>

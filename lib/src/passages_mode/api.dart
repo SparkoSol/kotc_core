@@ -4,6 +4,6 @@ part of kotc_core;
 abstract class PassagesModeApi {
   factory PassagesModeApi() => _PassagesModeApi(Api.client);
 
-  @GET('/passage-questions/game')
+  @GET('/passages/game')
   Future<List<PassageQuestionResponse>> getPassageGame();
 }
