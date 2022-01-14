@@ -70,6 +70,10 @@ part 'src/passages_mode/api.dart';
 
 part 'src/passages_mode/response.dart';
 
+part 'src/flashcards/api.dart';
+
+part 'src/flashcards/models.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
