@@ -27,4 +27,7 @@ abstract class CommonApi {
 
   @POST('/account-deletion-requests')
   Future requestAccountDeletion(@Body() AccountDeletionRequest request);
+
+  @PUT('/uploads')
+  Future<SimpleResponse> uploadImage(@Part() File file);
 }
