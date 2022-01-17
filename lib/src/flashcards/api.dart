@@ -5,17 +5,17 @@ abstract class FlashCardsApi {
   factory FlashCardsApi() => _FlashCardsApi(Api.client);
 
   @GET('/flashcards/user/{user}')
-  Future<List<FlashCardModel>> getAllFlashCards(
+  Future<List<FlashCardResponse>> getAllFlashCards(
     @Path('user') String userId,
   );
 
   @GET('/flashcards/deck/{deck}')
-  Future<List<FlashCardModel>> getDeckFlashCards(
+  Future<List<FlashCardResponse>> getDeckFlashCards(
     @Path('deck') String deckId,
   );
 
   @POST('/flashcards')
-  Future addFlashCard(@Body() FlashCardModel flashCard);
+  Future addFlashCard(@Body() FlashCardRequest flashCard);
 
   @POST('/decks')
   Future addDeck(@Body() DeckModel deck);
