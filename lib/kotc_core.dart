@@ -1,5 +1,6 @@
 library kotc_core;
 
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'dart:math' as math;
@@ -73,6 +74,10 @@ part 'src/passages_mode/response.dart';
 part 'src/flashcards/api.dart';
 
 part 'src/flashcards/models.dart';
+
+part 'src/flashcards/requests.dart';
+
+part 'src/flashcards/responses.dart';
 
 part 'kotc_core.g.dart';
 
