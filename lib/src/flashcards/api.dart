@@ -17,6 +17,12 @@ abstract class FlashCardsApi {
   @POST('/flashcards')
   Future addFlashCard(@Body() FlashCardRequest flashCard);
 
+  @PATCH('/flashcards')
+  Future updateFlashCard(@Body() FlashCardRequest flashCard);
+
+  @PATCH('/flashcards/last-show-time/{id}')
+  Future updateFlashCardTime(@Path('id') String cardId);
+
   @POST('/decks')
   Future addDeck(@Body() DeckModel deck);
 
