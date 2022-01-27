@@ -14,6 +14,11 @@ abstract class FlashCardsApi {
     @Path('deck') String deckId,
   );
 
+  @GET('/flashcards/admin/{deck}')
+  Future<List<FlashCardResponse>> getAdminDeckFlashCards(
+    @Path('deck') String deckId,
+  );
+
   @POST('/flashcards')
   Future addFlashCard(@Body() FlashCardRequest flashCard);
 
@@ -30,4 +35,10 @@ abstract class FlashCardsApi {
   Future<List<DeckModel>> getAllDecks(
     @Path('user') String userId,
   );
+
+  @GET('/decks/admin')
+  Future<List<DeckModel>> getAdminDecks();
+
+  @GET('/decks/admin/non-premium')
+  Future<List<DeckModel>> getNonPremiumAdminDecks();
 }

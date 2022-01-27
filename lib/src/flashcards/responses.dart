@@ -9,9 +9,11 @@ class FlashCardResponse {
   @JsonKey(name: 'back_image')
   final String backImage;
   final String name;
-  final int difficulty;
+  final int? difficulty;
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
+  @JsonKey(name: 'from_admin')
+  final bool fromAdmin;
   final DateTime? createdAt;
 
   FlashCardResponse({
@@ -21,8 +23,9 @@ class FlashCardResponse {
     required this.backImage,
     required this.frontImage,
     required this.deck,
-    required this.difficulty,
-    required this.userId,
+    this.difficulty,
+    this.userId,
+    required this.fromAdmin,
   });
 
   factory FlashCardResponse.fromJson(json) => _$FlashCardResponseFromJson(json);

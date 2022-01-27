@@ -5,14 +5,20 @@ class DeckModel {
   final String? id;
   final String name;
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
+  @JsonKey(name: 'from_admin')
+  final bool fromAdmin;
+  @JsonKey(name: 'is_premium')
+  final bool isPremium;
   final DateTime? createdAt;
 
   DeckModel({
     this.id,
     required this.name,
     this.createdAt,
-    required this.userId,
+    this.fromAdmin = false,
+    this.isPremium = false,
+    this.userId,
   });
 
   factory DeckModel.fromJson(json) => _$DeckModelFromJson(json);

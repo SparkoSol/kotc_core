@@ -11,7 +11,9 @@ class FlashCardRequest {
   final String name;
   final int difficulty;
   @JsonKey(name: 'user_id')
-  final String userId;
+  final String? userId;
+  @JsonKey(name: 'from_admin')
+  final bool fromAdmin;
   final DateTime? createdAt;
 
   FlashCardRequest({
@@ -22,7 +24,8 @@ class FlashCardRequest {
     required this.frontImage,
     required this.deck,
     required this.difficulty,
-    required this.userId,
+    this.userId,
+    this.fromAdmin = false,
   });
 
   Map<String, dynamic> toJson() => _$FlashCardRequestToJson(this);
