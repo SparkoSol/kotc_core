@@ -5,5 +5,5 @@ abstract class PassagesModeApi {
   factory PassagesModeApi() => _PassagesModeApi(Api.client);
 
   @GET('/passages/game')
-  Future<PassageQuestionResponse> getPassageGame();
+  Future<List<PassageQuestionResponse>> getPassageGames();
 }
