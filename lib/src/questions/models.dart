@@ -13,15 +13,15 @@ class QuestionModel {
   final List<String> images;
   final List<String> videos;
   final List<String> pdfs;
-  final String createdAt;
-  final String updatedAt;
+  final String? createdAt;
+  final String? updatedAt;
   final List<double>? percentage;
 
   QuestionModel({
     required this.category,
     required this.id,
     required this.answer,
-    required this.createdAt,
+    this.createdAt,
     required this.explanation,
     required this.images,
     this.options,
@@ -29,7 +29,7 @@ class QuestionModel {
     required this.statement,
     required this.subCategory,
     required this.type,
-    required this.updatedAt,
+    this.updatedAt,
     required this.videos,
     this.percentage,
   });
