@@ -42,7 +42,7 @@ class QuestionModel {
 @JsonSerializable(includeIfNull: false)
 class SubCategory {
   final String id;
-  final String name;
+  final String? name;
 
   SubCategory({required this.id, required this.name});
 
