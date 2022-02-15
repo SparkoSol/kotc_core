@@ -25,6 +25,12 @@ abstract class FlashCardsApi {
   @PATCH('/flashcards')
   Future updateFlashCard(@Body() FlashCardRequest flashCard);
 
+  @PUT('/flashcards/update-next-time/{id}/difficulty/{difficulty}')
+  Future updateNextShowTime(
+    @Path('id') String flashcardId,
+    @Path('difficulty') int difficulty,
+  );
+
   @POST('/decks')
   Future addDeck(@Body() DeckModel deck);
 
