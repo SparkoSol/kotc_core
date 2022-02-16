@@ -10,6 +10,10 @@ class DeckModel {
   final bool fromAdmin;
   @JsonKey(name: 'is_premium')
   final bool isPremium;
+  @JsonKey(name: 'due_count')
+  final int? dueCount;
+  @JsonKey(name: 'new_count')
+  final int? newCount;
   final DateTime? createdAt;
 
   DeckModel({
@@ -19,6 +23,8 @@ class DeckModel {
     this.fromAdmin = false,
     this.isPremium = false,
     this.userId,
+    this.dueCount,
+    this.newCount,
   });
 
   factory DeckModel.fromJson(json) => _$DeckModelFromJson(json);
