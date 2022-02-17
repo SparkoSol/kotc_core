@@ -30,3 +30,12 @@ class FlashCardRequest {
 
   Map<String, dynamic> toJson() => _$FlashCardRequestToJson(this);
 }
+
+@JsonSerializable(explicitToJson: true, createFactory: false)
+class DecksFlashCardRequest {
+  DecksFlashCardRequest({required this.decks});
+
+  final List<String> decks;
+
+  Map<String, dynamic> toJson() => _$DecksFlashCardRequestToJson(this);
+}

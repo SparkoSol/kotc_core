@@ -14,6 +14,11 @@ abstract class FlashCardsApi {
     @Path('deck') String deckId,
   );
 
+  @POST('/flashcards/decks')
+  Future<List<FlashCardResponse>> getDecksFlashCards(
+    @Body() DecksFlashCardRequest request,
+  );
+
   @GET('/flashcards/admin/{deck}')
   Future<List<FlashCardResponse>> getAdminDeckFlashCards(
     @Path('deck') String deckId,
