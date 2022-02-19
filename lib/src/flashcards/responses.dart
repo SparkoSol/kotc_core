@@ -44,7 +44,7 @@ class FlashCardResponse {
 
 @JsonSerializable(createToJson: false)
 class FlashCardButtonResponse {
-  final int value;
+  int value;
   final String unit;
 
   FlashCardButtonResponse({
