@@ -31,7 +31,7 @@ abstract class FlashCardsApi {
   Future updateFlashCard(@Body() FlashCardRequest flashCard);
 
   @PUT('/flashcards/update-next-time/{id}/difficulty/{difficulty}')
-  Future updateNextShowTime(
+  Future<FlashCardResponse> updateNextShowTime(
     @Path('id') String flashcardId,
     @Path('difficulty') int difficulty,
   );
