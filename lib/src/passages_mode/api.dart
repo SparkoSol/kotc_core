@@ -4,8 +4,8 @@ part of kotc_core;
 abstract class PassagesModeApi {
   factory PassagesModeApi() => _PassagesModeApi(Api.client);
 
-  @GET('/passages/game/{premium}')
+  @GET('/passages/game')
   Future<List<PassageQuestionResponse>> getPassageGames(
-    @Path('premium') bool isPremium,
+    // @Path('premium') bool isPremium,
   );
 }

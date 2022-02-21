@@ -6,6 +6,7 @@ class PassageQuestionResponse {
   final List<QuestionModel> questions;
   final String heading;
   final String passage;
+  bool premium;
   final List<String>? images;
   final String createdAt;
 
@@ -13,6 +14,7 @@ class PassageQuestionResponse {
     required this.id,
     required this.heading,
     required this.createdAt,
+    required this.premium,
     required this.questions,
     required this.passage,
     this.images,
