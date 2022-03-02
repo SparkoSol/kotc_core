@@ -4,10 +4,10 @@ part of kotc_core;
 class FlashCardResponse {
   final String? id;
   final DeckModel deck;
-  @JsonKey(name: 'front_image')
-  final String frontImage;
-  @JsonKey(name: 'back_image')
-  final String backImage;
+  @JsonKey(name: 'front_images')
+  final List<String>? frontImage;
+  @JsonKey(name: 'back_images')
+  final List<String>? backImage;
   final String name;
   final int? difficulty;
   @JsonKey(name: 'user_id')
@@ -17,6 +17,11 @@ class FlashCardResponse {
   final DateTime? createdAt;
   @JsonKey(name: 'is_first')
   final bool isFirst;
+  final bool isTextField;
+  @JsonKey(name: "ISClosedDeletion")
+  final bool isCloseDeletion;
+  String frontText;
+  String backText;
   final FlashCardButtonResponse again;
   final FlashCardButtonResponse hard;
   final FlashCardButtonResponse good;
@@ -26,8 +31,8 @@ class FlashCardResponse {
     this.id,
     required this.name,
     this.createdAt,
-    required this.backImage,
-    required this.frontImage,
+    this.backImage,
+    this.frontImage,
     required this.deck,
     this.difficulty,
     this.userId,
@@ -37,6 +42,10 @@ class FlashCardResponse {
     required this.easy,
     required this.good,
     required this.hard,
+    required this.backText,
+    required this.frontText,
+    required this.isCloseDeletion,
+    required this.isTextField,
   });
 
   factory FlashCardResponse.fromJson(json) => _$FlashCardResponseFromJson(json);
