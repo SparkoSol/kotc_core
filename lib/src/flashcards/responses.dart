@@ -48,6 +48,26 @@ class FlashCardResponse {
     required this.isTextField,
   });
 
+  FlashCardResponse.from(FlashCardResponse response)
+      : id = response.id,
+        name = response.name,
+        createdAt = response.createdAt,
+        backImage = response.backImage,
+        frontImage = response.frontImage,
+        deck = response.deck,
+        difficulty = response.difficulty,
+        userId = response.userId,
+        fromAdmin = response.fromAdmin,
+        isFirst = response.isFirst,
+        again = response.again,
+        easy = response.easy,
+        good = response.good,
+        hard = response.hard,
+        backText = response.backText,
+        frontText = response.frontText,
+        isCloseDeletion = response.isCloseDeletion,
+        isTextField = response.isTextField;
+
   factory FlashCardResponse.fromJson(json) => _$FlashCardResponseFromJson(json);
 }
 
