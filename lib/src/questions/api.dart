@@ -8,6 +8,14 @@ abstract class QuestionsApi {
   Future<List<QuestionModel>> getQuestions(
       @Path('mode') String mode, @Path('user') String user);
 
+  @GET('/questions/filter')
+  Future<List<QuestionModel>> getQuestionFromSub(
+    @Query('type') int type, // 1
+    @Query('sort') bool sort, // false
+    @Query('subcategory') String subCategory, // false
+    @Query('question-type') String questionType, // false
+  );
+
   @GET('/questions/{id}')
   Future<QuestionModel> getOneQuestion(@Path('id') String questionId);
 
