@@ -4,10 +4,10 @@ part of kotc_core;
 class FlashCardRequest {
   final String? id;
   final String deck;
-  @JsonKey(name: 'front_image')
-  final String frontImage;
-  @JsonKey(name: 'back_image')
-  final String backImage;
+  @JsonKey(name: 'front_images')
+  final List<String> frontImage;
+  @JsonKey(name: 'back_images')
+  final List<String> backImage;
   final String name;
   final int difficulty;
   @JsonKey(name: 'user_id')

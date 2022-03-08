@@ -10,6 +10,9 @@ abstract class ScoresApi {
   @GET('/questions/stats/user/{user}')
   Future<List<UserStats>> getUserStats(@Path('user') String userId);
 
+  @GET('/questions/stats/global')
+  Future<List<UserStats>> getGlobalOverallStats();
+
   @GET('/scores/high-score/{user}/{type}')
   Future<int> getHighScore(@Path('user') String userId, @Path('type') int type);
 
