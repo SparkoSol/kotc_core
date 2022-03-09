@@ -50,3 +50,18 @@ class UserOverallStats {
 
   Map<String, dynamic> toJson() => _$UserOverallStatsToJson(this);
 }
+
+@JsonSerializable(createFactory: false)
+class UserStatRequest {
+  UserStatRequest({
+    required this.subCategories,
+    required this.mode,
+    required this.user,
+  });
+
+  final String user;
+  final int mode;
+  final List<String> subCategories;
+
+  Map<String, dynamic> toJson() => _$UserStatRequestToJson(this);
+}

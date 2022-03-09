@@ -63,4 +63,24 @@ abstract class UserStatsApi {
     @Query('from') String? from,
     @Query('to') String? to,
   ]);
+
+  @POST('/user-stats/user-dashboard-stats')
+  Future<MultiplayerWinsLostResponse> getStatWinLostCat(
+    @Body() UserStatRequest request,
+  );
+
+  @POST('/user-stats/user-dashboard-stats')
+  Future<CorrectIncorrectResponse> getStatCorrectIncorrectCat(
+    @Body() UserStatRequest request,
+  );
+
+  @POST('/user-stats/user-dashboard-stats')
+  Future<GamesGraphResponse> getWeeklyGamesGraphCat(
+    @Body() UserStatRequest request,
+  );
+
+  @POST('/user-stats/user-dashboard-stats')
+  Future<ModeGamesGraphResponse> getGameModesGraphCat(
+    @Body() UserStatRequest request,
+  );
 }
