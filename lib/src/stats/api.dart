@@ -64,6 +64,30 @@ abstract class UserStatsApi {
     @Query('to') String? to,
   ]);
 
+  @GET('/user-stats/lifetime-user-dashboard-stats')
+  Future<MultiplayerWinsLostResponse> getStatWinLostAll(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/lifetime-user-dashboard-stats')
+  Future<CorrectIncorrectResponse> getStatCorrectIncorrectAll(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/lifetime-user-dashboard-stats')
+  Future<GamesGraphResponse> getWeeklyGamesGraphAll(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
+  @GET('/user-stats/lifetime-user-dashboard-stats')
+  Future<ModeGamesGraphResponse> getGameModesGraphAll(
+    @Query('user') String userId,
+    @Query('mode') int mode,
+  );
+
   @POST('/user-stats/user-dashboard-stats')
   Future<MultiplayerWinsLostResponse> getStatWinLostCat(
     @Body() UserStatRequest request,
