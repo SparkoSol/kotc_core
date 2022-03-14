@@ -49,4 +49,7 @@ abstract class QuestionsApi {
 
   @POST('/flagged-questions')
   Future addFlaggedQuestion(@Body() FlaggedQuestionRequest request);
+
+  @GET('/questions/subcategory/count')
+  Future<int> getQuestionCountFromCategory(@Query('name') String category);
 }

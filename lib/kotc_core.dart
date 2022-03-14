@@ -6,6 +6,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'dart:math' as math;
 import 'package:retrofit/retrofit.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 part 'src/questions/response.dart';
 
@@ -79,13 +81,17 @@ part 'src/flashcards/requests.dart';
 
 part 'src/flashcards/responses.dart';
 
+part 'src/achievements/api.dart';
+
+part 'src/achievements/models.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
   static final client = Dio(
     BaseOptions(
       headers: {"Content-Type": "application/json"},
-      // baseUrl: 'http://192.168.100.144:5000',
+      // baseUrl: 'http://10.20.20.83:5000',
       baseUrl: 'https://api.kingofthecurve.org/v2',
       connectTimeout: 50000,
       receiveTimeout: 50000,
