@@ -31,3 +31,40 @@ class BookMarkResponse {
 
   factory BookMarkResponse.fromJson(json) => _$BookMarkResponseFromJson(json);
 }
+
+@JsonSerializable(includeIfNull: false, createToJson: false)
+@HiveType(typeId: 4)
+class CategoryWithCountResponse extends HiveObject {
+  CategoryWithCountResponse({
+    required this.name,
+    required this.count,
+    required this.subcategories,
+  });
+
+  @HiveField(0)
+  final String name;
+  @HiveField(1)
+  final int count;
+  @HiveField(2)
+  final List<SubCategoryCountResponse> subcategories;
+
+  factory CategoryWithCountResponse.fromJson(json) =>
+      _$CategoryWithCountResponseFromJson(json);
+}
+
+@JsonSerializable(includeIfNull: false, createToJson: false)
+@HiveType(typeId: 5)
+class SubCategoryCountResponse extends HiveObject {
+  SubCategoryCountResponse({
+    required this.name,
+    required this.count,
+  });
+
+  @HiveField(0)
+  final String name;
+  @HiveField(1)
+  final int count;
+
+  factory SubCategoryCountResponse.fromJson(json) =>
+      _$SubCategoryCountResponseFromJson(json);
+}

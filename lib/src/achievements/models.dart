@@ -6,8 +6,10 @@ class StageSyncModel {
     required this.stages,
     required this.userId,
     required this.stats,
+    this.id,
   });
 
+  String? id;
   List<StagesModel> stages;
   String userId;
   List<AchievementsStatsModel> stats;
@@ -22,6 +24,9 @@ enum Stages {
   @JsonValue('stage1')
   @HiveField(0)
   stage1,
+  @JsonValue('stage2')
+  @HiveField(1)
+  stage2,
 }
 
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
@@ -66,8 +71,7 @@ class AchievementModel extends HiveObject {
     required this.id,
     required this.name,
     required this.status,
-    required this.disabledIcon,
-    required this.icon,
+    required this.description,
   });
 
   @HiveField(0)
@@ -75,11 +79,9 @@ class AchievementModel extends HiveObject {
   @HiveField(1)
   final String name;
   @HiveField(2)
-  final String icon;
-  @HiveField(3)
-  final String disabledIcon;
-  @HiveField(4)
   bool status;
+  @HiveField(3)
+  String description;
 
   Map<String, dynamic> toJson() => _$AchievementModelToJson(this);
 

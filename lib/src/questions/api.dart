@@ -6,11 +6,14 @@ abstract class QuestionsApi {
 
   @GET('/questions/mode/{mode}/user/{user}')
   Future<List<QuestionModel>> getQuestions(
-      @Path('mode') String mode, @Path('user') String user);
+    @Path('mode') String mode,
+    @Path('user') String user,
+  );
 
   @GET('/questions/subcategory')
   Future<List<QuestionModel>> getQuestionFromSub(
-    @Query('sort') bool sort, // false
+    @Query('sort') bool sort,
+    // false
     @Query('subcategory') String subCategory, // false
     @Query('question-type') String questionType, // false
   );
@@ -51,5 +54,5 @@ abstract class QuestionsApi {
   Future addFlaggedQuestion(@Body() FlaggedQuestionRequest request);
 
   @GET('/questions/subcategory/count')
-  Future<int> getQuestionCountFromCategory(@Query('name') String category);
+  Future<List<CategoryWithCountResponse>> getQuestionCountFromCategory();
 }
