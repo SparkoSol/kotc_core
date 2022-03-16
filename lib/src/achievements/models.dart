@@ -27,6 +27,9 @@ enum Stages {
   @JsonValue('stage2')
   @HiveField(1)
   stage2,
+  @JsonValue('stage3')
+  @HiveField(2)
+  stage3,
 }
 
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
