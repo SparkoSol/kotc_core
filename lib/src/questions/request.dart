@@ -77,12 +77,28 @@ class FlaggedQuestionRequest {
   final String reason;
   @JsonKey(name: 'user')
   final String userId;
+  @JsonKey(name: 'user_data')
+  final FlaggedUserData userData;
 
   FlaggedQuestionRequest({
     required this.reason,
     required this.questionId,
     required this.userId,
+    required this.userData,
   });
 
   Map<String, dynamic> toJson() => _$FlaggedQuestionRequestToJson(this);
+}
+
+@JsonSerializable(includeIfNull: false, createFactory: false)
+class FlaggedUserData {
+  FlaggedUserData({
+    required this.name,
+    required this.email,
+  });
+
+  final String name;
+  final String email;
+
+  Map<String, dynamic> toJson() => _$FlaggedUserDataToJson(this);
 }

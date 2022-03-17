@@ -53,6 +53,9 @@ abstract class QuestionsApi {
   @POST('/flagged-questions')
   Future addFlaggedQuestion(@Body() FlaggedQuestionRequest request);
 
+  @GET('/flagged-questions/confirm-contribution/{id}')
+  Future<bool> getIsFlaggedAccepted(@Path('id') String userId);
+
   @GET('/questions/subcategory/count')
   Future<List<CategoryWithCountResponse>> getQuestionCountFromCategory();
 }
