@@ -21,15 +21,15 @@ class StageSyncModel {
 
 @HiveType(typeId: 1)
 enum Stages {
-  @JsonValue('stage1')
+  @JsonValue('Basic')
   @HiveField(0)
-  stage1,
-  @JsonValue('stage2')
+  basic,
+  @JsonValue('Intermediate')
   @HiveField(1)
-  stage2,
-  @JsonValue('stage3')
+  intermediate,
+  @JsonValue('Pro')
   @HiveField(2)
-  stage3,
+  pro,
 }
 
 @JsonSerializable(includeIfNull: false, explicitToJson: true)
