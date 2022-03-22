@@ -75,6 +75,7 @@ class AchievementModel extends HiveObject {
     required this.name,
     required this.status,
     required this.description,
+    required this.progress,
   });
 
   @HiveField(0)
@@ -85,6 +86,8 @@ class AchievementModel extends HiveObject {
   bool status;
   @HiveField(3)
   String description;
+  @HiveField(4)
+  double progress;
 
   Map<String, dynamic> toJson() => _$AchievementModelToJson(this);
 
