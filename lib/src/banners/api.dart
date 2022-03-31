@@ -4,13 +4,6 @@ part of kotc_core;
 abstract class BannersApi {
   factory BannersApi() => _BannersApi(Api.client);
 
-  @Deprecated('this is deprecated, Use getBannersNew')
-  @GET('/banners/page/{page}/position/{placement}')
-  Future<List<BannersResponse>> getBanners(
-    @Path('page') int page,
-    @Path('placement') int position,
-  );
-
   /// 0 for IOS
   /// 1 for Android
 
