@@ -15,6 +15,9 @@ class FlashCardRequest {
   @JsonKey(name: 'from_admin')
   final bool fromAdmin;
   final DateTime? createdAt;
+  final bool? isTextField;
+  final String? frontText;
+  final String? backText;
 
   FlashCardRequest({
     this.id,
@@ -26,6 +29,9 @@ class FlashCardRequest {
     required this.difficulty,
     this.userId,
     this.fromAdmin = false,
+    this.backText,
+    this.frontText,
+    this.isTextField,
   });
 
   Map<String, dynamic> toJson() => _$FlashCardRequestToJson(this);

@@ -19,6 +19,8 @@ class PreferencesModel {
   bool? showMediumQuestions;
   @JsonKey(name: 'show_hard_questions')
   bool? showHardQuestions;
+  @JsonKey(name: 'tutor_mode')
+  bool? tutorMode;
 
   PreferencesModel({
     this.id,
@@ -31,6 +33,7 @@ class PreferencesModel {
     this.showEasyQuestions,
     this.showHardQuestions,
     this.showMediumQuestions,
+    this.tutorMode,
   });
 
   Map<String, dynamic> toJson() => _$PreferencesModelToJson(this);

@@ -37,7 +37,7 @@ abstract class FlashCardsApi {
   );
 
   @POST('/decks')
-  Future addDeck(@Body() DeckModel deck);
+  Future<SimpleResponse> addDeck(@Body() DeckModel deck);
 
   @GET('/flashcards/decks/user/{user}')
   Future<List<DeckModel>> getAllDecks(
