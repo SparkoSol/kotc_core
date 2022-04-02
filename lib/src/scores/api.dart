@@ -16,11 +16,11 @@ abstract class ScoresApi {
   @GET('/scores/high-score/{user}/{type}')
   Future<int> getHighScore(@Path('user') String userId, @Path('type') int type);
 
-  @GET('/scores/history/{user}/{mode}/{last}/{page}')
-  Future<List<PreviousGame>> getPreviousGame(
-    @Path('user') String userId,
-    @Path('mode') int mode,
-    @Path('page') int page,
-    @Path('last') String? last,
-  );
+  // @GET('/scores/history/{user}/{mode}/{last}/{page}')
+  // Future<List<PreviousGame>> getPreviousGame(
+  //   @Path('user') String userId,
+  //   @Path('mode') int mode,
+  //   @Path('page') int page,
+  //   @Path('last') String? last,
+  // );
 }

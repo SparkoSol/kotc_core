@@ -58,4 +58,12 @@ abstract class QuestionsApi {
 
   @GET('/questions/subcategory/count')
   Future<List<CategoryWithCountResponse>> getQuestionCountFromCategory();
+
+  @GET('/questions/games-history/{user}/{mode}/{last}/{page}')
+  Future<List<PreviousGame>> getPreviousGame(
+    @Path('user') String userId,
+    @Path('mode') int mode,
+    @Path('page') int page,
+    @Path('last') String? last,
+  );
 }
