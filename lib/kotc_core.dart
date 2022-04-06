@@ -85,6 +85,10 @@ part 'src/achievements/api.dart';
 
 part 'src/achievements/models.dart';
 
+part 'src/facts/api.dart';
+
+part 'src/facts/response.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
