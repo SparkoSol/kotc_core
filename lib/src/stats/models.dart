@@ -20,6 +20,8 @@ class UserOverallStats {
     required this.win,
     required this.wrong,
     required this.boolHighScore,
+    this.watchDuration,
+    this.lastWatchDate,
   });
 
   final String? id;
@@ -62,6 +64,12 @@ class UserOverallStats {
   String? questionOfTheDayPlayed;
   @JsonKey(name: 'notification_time')
   String? notificationTime;
+
+  // Watch Video duration
+  @JsonKey(name: 'last_video_played_seconds')
+  int? watchDuration;
+  @JsonKey(name: 'last_video_played_date')
+  String? lastWatchDate;
 
   factory UserOverallStats.fromJson(json) => _$UserOverallStatsFromJson(json);
 

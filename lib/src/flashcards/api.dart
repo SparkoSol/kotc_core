@@ -30,6 +30,9 @@ abstract class FlashCardsApi {
   @PATCH('/flashcards')
   Future updateFlashCard(@Body() FlashCardRequest flashCard);
 
+  @DELETE('/flashcards/{id}')
+  Future deleteFlashCard(@Path('id') String id);
+
   @PUT('/flashcards/update-next-time/{id}/difficulty/{difficulty}')
   Future<FlashCardResponse> updateNextShowTime(
     @Path('id') String flashcardId,
@@ -38,6 +41,9 @@ abstract class FlashCardsApi {
 
   @POST('/decks')
   Future<SimpleResponse> addDeck(@Body() DeckModel deck);
+
+  @PATCH('/decks')
+  Future updateDeck(@Body() DeckModel deck);
 
   @GET('/flashcards/decks/user/{user}')
   Future<List<DeckModel>> getAllDecks(

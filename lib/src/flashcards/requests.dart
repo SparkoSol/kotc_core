@@ -3,7 +3,7 @@ part of kotc_core;
 @JsonSerializable(explicitToJson: true, createFactory: false)
 class FlashCardRequest {
   final String? id;
-  final String deck;
+  String deck;
   @JsonKey(name: 'front_images')
   final List<String> frontImage;
   @JsonKey(name: 'back_images')

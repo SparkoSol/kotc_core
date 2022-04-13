@@ -3,7 +3,7 @@ part of kotc_core;
 @JsonSerializable()
 class DeckModel {
   final String? id;
-  final String name;
+  String name;
   @JsonKey(name: 'user_id')
   final String? userId;
   @JsonKey(name: 'from_admin')
