@@ -89,6 +89,10 @@ part 'src/facts/api.dart';
 
 part 'src/facts/response.dart';
 
+part 'src/survey/api.dart';
+
+part 'src/survey/request.dart';
+
 part 'kotc_core.g.dart';
 
 class Api {
