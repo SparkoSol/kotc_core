@@ -5,6 +5,7 @@ class UserOverallStats {
   UserOverallStats({
     this.id,
     required this.user,
+    this.email,
     required this.name,
     required this.right,
     required this.crown,
@@ -22,11 +23,16 @@ class UserOverallStats {
     required this.boolHighScore,
     this.watchDuration,
     this.lastWatchDate,
+    this.referredBy,
+    this.referred,
+    this.referredByEmail,
+    this.referredByName,
   });
 
   final String? id;
   final String user;
   String name;
+  String? email;
   int total;
   int right;
   int wrong;
@@ -52,6 +58,10 @@ class UserOverallStats {
   bool? referred;
   @JsonKey(name: 'referred_by')
   String? referredBy;
+  @JsonKey(name: 'referred_by_email')
+  String? referredByEmail;
+  @JsonKey(name: 'referred_by_name')
+  String? referredByName;
 
   // If user share app link and someone redeemed it
   @JsonKey(name: 'has_promo_trial')
