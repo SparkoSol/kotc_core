@@ -12,21 +12,22 @@ dependencies:
     sdk: flutter
 
   retrofit: ^3.0.1
-  json_annotation: ^4.4.0
+  firebase_auth: ^3.3.17
+  json_annotation: ^4.5.0
   device_info_plus: ^3.2.3
   firebase_messaging: ^11.3.0
+  cloud_firestore_odm: ^1.0.0-dev.14
 
   builder:
     git: https://github.com/ArishSultan/buildable.git
+  cloud_firestore: ^3.1.14
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.1.7
+  build_runner: ^2.1.10
   flutter_lints: ^1.0.0
-  json_serializable: ^6.1.4
+  json_serializable: ^6.2.0
   retrofit_generator: ^4.0.0
   builder_generator:
     git: https://github.com/ArishSultan/buildable_generator.git
-
-flutter:
