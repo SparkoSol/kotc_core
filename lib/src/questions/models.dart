@@ -10,9 +10,9 @@ class QuestionModel {
   final SubCategory category;
   final SubCategory subCategory;
   final String explanation;
-  final List<String> images;
-  final List<String> videos;
-  final List<String> pdfs;
+  final List<String>? images;
+  final List<String>? videos;
+  final List<String>? pdfs;
   final String? createdAt;
   final String? updatedAt;
   final List<double>? percentage;
@@ -23,14 +23,14 @@ class QuestionModel {
     required this.answer,
     this.createdAt,
     required this.explanation,
-    required this.images,
+    this.images,
     this.options,
-    required this.pdfs,
+    this.pdfs,
     required this.statement,
     required this.subCategory,
     required this.type,
     this.updatedAt,
-    required this.videos,
+    this.videos,
     this.percentage,
   });
 
