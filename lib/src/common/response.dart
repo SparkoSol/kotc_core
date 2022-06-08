@@ -11,15 +11,29 @@ class SimpleResponse {
 
 @JsonSerializable(includeIfNull: false, createToJson: false)
 class AppStatusResponse {
-  final int status;
-  final String message;
-
   AppStatusResponse({
     required this.message,
     required this.status,
+    required this.appstoreVersion,
+    required this.inReview,
+    required this.playStoreVersion,
   });
 
+  final int status;
+  final String message;
+  @JsonKey(name: 'in_review')
+  final bool inReview;
+  @JsonKey(name: 'appstore_version')
+  final String appstoreVersion;
+  @JsonKey(name: 'playstore_version')
+  final String playStoreVersion;
+
   factory AppStatusResponse.fromJson(json) => _$AppStatusResponseFromJson(json);
+
+  @override
+  String toString() {
+    return '$status, $message, $inReview, $appstoreVersion, $playStoreVersion';
+  }
 }
 
 @JsonSerializable(includeIfNull: false, createToJson: false)
