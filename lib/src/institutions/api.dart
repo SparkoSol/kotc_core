@@ -14,6 +14,11 @@ abstract class InstitutionsApi {
   @GET('/institutions/{domain}')
   Future<InstituteModel> findInstitute(@Path('domain') String domain);
 
+  @GET('/institutions')
+  Future<List<InstituteModel>> getVerifiedInstitutes(
+    @Query('verified') bool query,
+  );
+
   @POST('/institutions/link-institute-email/{domain}/{id}')
   Future linkInstitute(
     @Path('domain') String domain,

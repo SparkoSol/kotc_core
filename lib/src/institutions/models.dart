@@ -29,4 +29,18 @@ class InstituteModel {
   factory InstituteModel.fromJson(json) => _$InstituteModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$InstituteModelToJson(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (other is InstituteModel) {
+      return other.id == id;
+    }
+    return false;
+  }
+
+  @override
+  int get hashCode => id.hashCode;
+
+  @override
+  String toString() => name ?? '';
 }
