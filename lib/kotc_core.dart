@@ -99,7 +99,6 @@ class Api {
   static final client = Dio(
     BaseOptions(
       headers: {"Content-Type": "application/json"},
-      // baseUrl: 'http://10.20.20.83:5000',
       baseUrl: 'https://api.kingofthecurve.org/v2',
       connectTimeout: 50000,
       receiveTimeout: 50000,
