@@ -1,5 +1,6 @@
 part of kotc_core;
 
+
 ///
 class DeviceIdentity {
   /// Returns the unique id depending upon the platform.

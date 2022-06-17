@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:just_audio/just_audio.dart';
+// import 'package:just_audio/just_audio.dart';
 import 'package:kotc_core/new_src/notifier.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

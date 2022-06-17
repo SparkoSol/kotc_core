@@ -1,5 +1,6 @@
 part of kotc_core;
 
+
 class Logger {
   static void info(String message) => _log(message, 'INFO');
 
@@ -10,7 +11,7 @@ class Logger {
 
     assert(() {
       toApi = false;
-      debugPrint('[$type] $message');
+      // debugPrint('[$type] $message');
 
       return true;
     }());
@@ -19,7 +20,7 @@ class Logger {
       Api.client.post('/logs', data: {
         'level': type,
         'message': message,
-        'platform': defaultTargetPlatform.name,
+        // 'platform': defaultTargetPlatform.name,
       });
     }
   }

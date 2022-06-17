@@ -47,7 +47,7 @@ Future<void> _handleUserCreation(
         name ?? credential.user?.displayName?.split('@').first ?? 'user';
     final _email = email ?? credential.user!.email;
 
-    await FirebaseFirestore.instance
+    await fire_store.FirebaseFirestore.instance
         .collection('users')
         .doc(credential.user!.uid)
         .set({
@@ -73,7 +73,7 @@ Future<void> _handleUserCreation(
   } catch (err) {
     // Remove the user from firestore since, the existence of this user
     // is no longer correct.
-    await FirebaseFirestore.instance
+    await fire_store.FirebaseFirestore.instance
         .collection('users')
         .doc(credential.user!.uid)
         .delete();
