@@ -6,4 +6,7 @@ abstract class SurveyApi {
 
   @POST('/surveys')
   Future addSurveys(@Body() SurveyRequest request);
+
+  @POST('/surveys/exam')
+  Future addExamSurvey(@Body() ExamSurveyRequest request);
 }

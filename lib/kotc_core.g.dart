@@ -683,7 +683,9 @@ UserOverallStats _$UserOverallStatsFromJson(Map<String, dynamic> json) =>
       ..hasPromoTrial = json['has_promo_trial'] as bool?
       ..hasPromoRedeemed = json['has_promo_redeemed'] as bool?
       ..questionOfTheDayPlayed = json['qotd_played'] as String?
-      ..notificationTime = json['notification_time'] as String?;
+      ..notificationTime = json['notification_time'] as String?
+      ..examDate = json['exam_date'] as String?
+      ..isSurvey = json['is_survey'] as bool?;
 
 Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
   final val = <String, dynamic>{};
@@ -722,6 +724,8 @@ Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
   writeNotNull('notification_time', instance.notificationTime);
   writeNotNull('last_video_played_seconds', instance.watchDuration);
   writeNotNull('last_video_played_date', instance.lastWatchDate);
+  writeNotNull('exam_date', instance.examDate);
+  writeNotNull('is_survey', instance.isSurvey);
   return val;
 }
 
@@ -1164,6 +1168,21 @@ Map<String, dynamic> _$SurveyRequestToJson(SurveyRequest instance) =>
       'reason': instance.reason,
       'email': instance.email,
       'user_id': instance.userId,
+    };
+
+Map<String, dynamic> _$ExamSurveyRequestToJson(ExamSurveyRequest instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'user_id': instance.userId,
+      'questions': instance.questions,
+    };
+
+Map<String, dynamic> _$ExamSurveyQuestionRequestToJson(
+        ExamSurveyQuestionRequest instance) =>
+    <String, dynamic>{
+      'question': instance.question,
+      'answer': instance.answer,
+      'hashCode': instance.hashCode,
     };
 
 // **************************************************************************
@@ -3040,6 +3059,22 @@ class _SurveyApi implements SurveyApi {
     final _result = await _dio.fetch(_setStreamType<dynamic>(
         Options(method: 'POST', headers: _headers, extra: _extra)
             .compose(_dio.options, '/surveys',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data;
+    return value;
+  }
+
+  @override
+  Future<dynamic> addExamSurvey(request) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(request.toJson());
+    final _result = await _dio.fetch(_setStreamType<dynamic>(
+        Options(method: 'POST', headers: _headers, extra: _extra)
+            .compose(_dio.options, '/surveys/exam',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;
