@@ -356,6 +356,8 @@ QuestionModel _$QuestionModelFromJson(Map<String, dynamic> json) =>
       options:
           (json['options'] as List<dynamic>?)?.map((e) => e as String).toList(),
       pdfs: (json['pdfs'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      htmlExplanation: json['htmlExplanation'] as String?,
+      htmlStatement: json['htmlStatement'] as String?,
       statement: json['statement'] as String,
       subCategory: SubCategory.fromJson(json['subCategory']),
       type: json['type'] as String,
@@ -381,10 +383,12 @@ Map<String, dynamic> _$QuestionModelToJson(QuestionModel instance) {
     }
   }
 
+  writeNotNull('htmlStatement', instance.htmlStatement);
   writeNotNull('options', instance.options);
   val['category'] = instance.category;
   val['subCategory'] = instance.subCategory;
   val['explanation'] = instance.explanation;
+  writeNotNull('htmlExplanation', instance.htmlExplanation);
   writeNotNull('images', instance.images);
   writeNotNull('videos', instance.videos);
   writeNotNull('pdfs', instance.pdfs);

@@ -6,10 +6,12 @@ class QuestionModel {
   final int answer;
   final String type;
   final String statement;
+  final String? htmlStatement;
   final List<String>? options;
   final SubCategory category;
   final SubCategory subCategory;
   final String explanation;
+  final String? htmlExplanation;
   final List<String>? images;
   final List<String>? videos;
   final List<String>? pdfs;
@@ -26,6 +28,8 @@ class QuestionModel {
     this.images,
     this.options,
     this.pdfs,
+    this.htmlExplanation,
+    this.htmlStatement,
     required this.statement,
     required this.subCategory,
     required this.type,
