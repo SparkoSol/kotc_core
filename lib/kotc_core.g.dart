@@ -683,6 +683,10 @@ UserOverallStats _$UserOverallStatsFromJson(Map<String, dynamic> json) =>
       referred: json['referred'] as bool?,
       referredByEmail: json['referred_by_email'] as String?,
       referredByName: json['referred_by_name'] as String?,
+      onBoarding: json['on_boarding'] == null
+          ? null
+          : OnBoardingModel.fromJson(
+              json['on_boarding'] as Map<String, dynamic>),
     )
       ..hasPromoTrial = json['has_promo_trial'] as bool?
       ..hasPromoRedeemed = json['has_promo_redeemed'] as bool?
@@ -700,6 +704,7 @@ Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
     }
   }
 
+  writeNotNull('on_boarding', instance.onBoarding);
   writeNotNull('id', instance.id);
   val['user'] = instance.user;
   val['name'] = instance.name;
@@ -738,6 +743,100 @@ Map<String, dynamic> _$UserStatRequestToJson(UserStatRequest instance) =>
       'user': instance.user,
       'mode': instance.mode,
       'subCategories': instance.subCategories,
+    };
+
+OnBoardingModel _$OnBoardingModelFromJson(Map<String, dynamic> json) =>
+    OnBoardingModel(
+      subjectDifficultyRanking: SubjectDifficultyRanking.fromJson(
+          json['subject_difficulty_ranking'] as Map<String, dynamic>),
+      lastStep: $enumDecodeNullable(_$PagesEnumMap, json['last_step']),
+      userName: json['user_name'] as String?,
+      age: json['age'] as int?,
+      commitment: json['commitment'] as bool? ?? false,
+      gender: json['gender'] as String?,
+      improvements: (json['mcat_improvements'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      isMcatTakenBefore: json['is_mcat_taken_before'] as bool?,
+      isRememberStudy: json['is_remember_study'] as bool?,
+      isUnderstandStudyHabits: json['is_understand_study_habits'] as bool?,
+      lastPracticeScore: json['last_practice_score'] as int?,
+      mcatDailyStudy: json['mcat_daily_study'] as String?,
+      mcatGoalScore: json['mcat_goal_score'] as int?,
+      mcatPrevTestDate: json['mcat_previous_test_date'] as String?,
+      mcatPrevTestScore: json['mcat_previous_test_score'] as int?,
+      mcatTestDate: json['mcat_test_date'] as String?,
+      realName: json['real_name'] as String?,
+      studyHabitsImportance: json['study_habits_importance'] as String?,
+      studyMaterial: (json['study_material'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      studyTiming: json['study_timing'] as String?,
+    );
+
+Map<String, dynamic> _$OnBoardingModelToJson(OnBoardingModel instance) =>
+    <String, dynamic>{
+      'real_name': instance.realName,
+      'user_name': instance.userName,
+      'mcat_goal_score': instance.mcatGoalScore,
+      'mcat_test_date': instance.mcatTestDate,
+      'is_mcat_taken_before': instance.isMcatTakenBefore,
+      'mcat_previous_test_date': instance.mcatPrevTestDate,
+      'mcat_previous_test_score': instance.mcatPrevTestScore,
+      'last_practice_score': instance.lastPracticeScore,
+      'gender': instance.gender,
+      'is_remember_study': instance.isRememberStudy,
+      'mcat_daily_study': instance.mcatDailyStudy,
+      'age': instance.age,
+      'is_understand_study_habits': instance.isUnderstandStudyHabits,
+      'study_habits_importance': instance.studyHabitsImportance,
+      'commitment': instance.commitment,
+      'study_timing': instance.studyTiming,
+      'study_material': instance.studyMaterial,
+      'mcat_improvements': instance.improvements,
+      'last_step': _$PagesEnumMap[instance.lastStep],
+      'subject_difficulty_ranking': instance.subjectDifficultyRanking,
+    };
+
+const _$PagesEnumMap = {
+  Pages.namePage: 0,
+  Pages.scoreGoalPage: 1,
+  Pages.genderPage: 2,
+  Pages.rememberMorePage: 3,
+  Pages.rankDifficultSubjectPage: 4,
+  Pages.appUseTimePage: 5,
+  Pages.agePage: 6,
+  Pages.understandStudyHabitsPage: 7,
+  Pages.studyHabitsKnowPage: 8,
+  Pages.contractPage: 9,
+  Pages.congratulationsPage: 10,
+  Pages.weUnderstandPage: 11,
+  Pages.studyTimePage: 12,
+  Pages.studyMaterialPage: 13,
+  Pages.freeTrialWorksPage: 14,
+  Pages.improvementPage: 15,
+};
+
+SubjectDifficultyRanking _$SubjectDifficultyRankingFromJson(
+        Map<String, dynamic> json) =>
+    SubjectDifficultyRanking(
+      physics: json['physics'] as int? ?? 1,
+      behavioralSciences: json['behavioral_science'] as int? ?? 1,
+      bioChemistry: json['bio_chemistry'] as int? ?? 1,
+      biology: json['biology'] as int? ?? 1,
+      organicChemistry: json['organic_chemistry'] as int? ?? 1,
+      psychology: json['psychology'] as int? ?? 1,
+    );
+
+Map<String, dynamic> _$SubjectDifficultyRankingToJson(
+        SubjectDifficultyRanking instance) =>
+    <String, dynamic>{
+      'physics': instance.physics,
+      'behavioral_science': instance.behavioralSciences,
+      'bio_chemistry': instance.bioChemistry,
+      'biology': instance.biology,
+      'organic_chemistry': instance.organicChemistry,
+      'psychology': instance.psychology,
     };
 
 InstituteModel _$InstituteModelFromJson(Map<String, dynamic> json) =>
