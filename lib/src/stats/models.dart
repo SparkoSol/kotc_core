@@ -83,8 +83,6 @@ class UserOverallStats {
   int? watchDuration;
   @JsonKey(name: 'last_video_played_date')
   String? lastWatchDate;
-  @JsonKey(name: 'exam_date')
-  String? examDate;
   @JsonKey(name: 'is_survey')
   bool? isSurvey;
 
