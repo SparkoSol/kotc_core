@@ -692,7 +692,6 @@ UserOverallStats _$UserOverallStatsFromJson(Map<String, dynamic> json) =>
       ..hasPromoRedeemed = json['has_promo_redeemed'] as bool?
       ..questionOfTheDayPlayed = json['qotd_played'] as String?
       ..notificationTime = json['notification_time'] as String?
-      ..examDate = json['exam_date'] as String?
       ..isSurvey = json['is_survey'] as bool?;
 
 Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
@@ -733,7 +732,6 @@ Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
   writeNotNull('notification_time', instance.notificationTime);
   writeNotNull('last_video_played_seconds', instance.watchDuration);
   writeNotNull('last_video_played_date', instance.lastWatchDate);
-  writeNotNull('exam_date', instance.examDate);
   writeNotNull('is_survey', instance.isSurvey);
   return val;
 }
