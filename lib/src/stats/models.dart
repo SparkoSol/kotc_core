@@ -112,8 +112,8 @@ class UserStatRequest {
 class OnBoardingModel {
   @JsonKey(name: 'real_name')
   String? realName;
-  @JsonKey(name: 'user_name')
-  String? userName;
+  // @JsonKey(name: 'user_name')
+  // String? userName;
   @JsonKey(name: 'mcat_goal_score')
   int? mcatGoalScore;
   @JsonKey(name: 'mcat_test_date')
@@ -151,7 +151,7 @@ class OnBoardingModel {
   OnBoardingModel({
     required this.subjectDifficultyRanking,
     this.lastStep,
-    this.userName,
+    // this.userName,
     this.age,
     this.commitment = false,
     this.gender,

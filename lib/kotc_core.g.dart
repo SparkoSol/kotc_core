@@ -750,7 +750,6 @@ OnBoardingModel _$OnBoardingModelFromJson(Map<String, dynamic> json) =>
       subjectDifficultyRanking: SubjectDifficultyRanking.fromJson(
           json['subject_difficulty_ranking'] as Map<String, dynamic>),
       lastStep: $enumDecodeNullable(_$PagesEnumMap, json['last_step']),
-      userName: json['user_name'] as String?,
       age: json['age'] as int?,
       commitment: json['commitment'] as bool? ?? false,
       gender: json['gender'] as String?,
@@ -777,7 +776,6 @@ OnBoardingModel _$OnBoardingModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$OnBoardingModelToJson(OnBoardingModel instance) =>
     <String, dynamic>{
       'real_name': instance.realName,
-      'user_name': instance.userName,
       'mcat_goal_score': instance.mcatGoalScore,
       'mcat_test_date': instance.mcatTestDate,
       'is_mcat_taken_before': instance.isMcatTakenBefore,
