@@ -107,4 +107,9 @@ abstract class UserStatsApi {
   Future<ModeGamesGraphResponse> getGameModesGraphCat(
     @Body() UserStatRequest request,
   );
+
+  @GET('/user-stats/search')
+  Future<List<SearchUserResponse>> searchUsersByName(
+    @Query('query') String name,
+  );
 }

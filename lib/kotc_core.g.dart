@@ -657,6 +657,12 @@ ModeGamesGraphResponse _$ModeGamesGraphResponseFromJson(
       qBank: json['qbank'] as int,
     );
 
+SearchUserResponse _$SearchUserResponseFromJson(Map<String, dynamic> json) =>
+    SearchUserResponse(
+      name: json['name'] as String,
+      id: json['id'] as String,
+    );
+
 UserOverallStats _$UserOverallStatsFromJson(Map<String, dynamic> json) =>
     UserOverallStats(
       id: json['id'] as String?,
@@ -2270,6 +2276,25 @@ class _UserStatsApi implements UserStatsApi {
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = ModeGamesGraphResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<SearchUserResponse>> searchUsersByName(name) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'query': name};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<SearchUserResponse>>(
+            Options(method: 'GET', headers: _headers, extra: _extra)
+                .compose(_dio.options, '/user-stats/search',
+                    queryParameters: queryParameters, data: _data)
+                .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) =>
+            SearchUserResponse.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

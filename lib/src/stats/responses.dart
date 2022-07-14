@@ -132,3 +132,17 @@ class ModeGamesGraphResponse {
   factory ModeGamesGraphResponse.fromJson(json) =>
       _$ModeGamesGraphResponseFromJson(json);
 }
+
+@JsonSerializable(includeIfNull: false, createToJson: false)
+class SearchUserResponse {
+  SearchUserResponse({
+    required this.name,
+    required this.id,
+  });
+
+  final String id;
+  final String name;
+
+  factory SearchUserResponse.fromJson(json) =>
+      _$SearchUserResponseFromJson(json);
+}
