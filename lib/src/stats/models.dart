@@ -28,6 +28,7 @@ class UserOverallStats {
     this.referredByEmail,
     this.referredByName,
     this.onBoarding,
+    this.isOnBoardingSkipped,
   });
 
   @JsonKey(name: 'on_boarding')
@@ -85,6 +86,8 @@ class UserOverallStats {
   String? lastWatchDate;
   @JsonKey(name: 'is_survey')
   bool? isSurvey;
+  @JsonKey(name: 'onboarding_skipped')
+  bool? isOnBoardingSkipped;
 
   factory UserOverallStats.fromJson(json) => _$UserOverallStatsFromJson(json);
 
@@ -110,6 +113,7 @@ class UserStatRequest {
 class OnBoardingModel {
   @JsonKey(name: 'real_name')
   String? realName;
+
   // @JsonKey(name: 'user_name')
   // String? userName;
   @JsonKey(name: 'mcat_goal_score')
@@ -226,13 +230,9 @@ enum Pages {
   @JsonValue(10)
   congratulationsPage,
   @JsonValue(11)
-  weUnderstandPage,
-  @JsonValue(12)
   studyTimePage,
-  @JsonValue(13)
+  @JsonValue(12)
   studyMaterialPage,
-  @JsonValue(14)
-  freeTrialWorksPage,
-  @JsonValue(15)
-  improvementPage
+  @JsonValue(13)
+  improvementPage,
 }

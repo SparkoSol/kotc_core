@@ -693,6 +693,7 @@ UserOverallStats _$UserOverallStatsFromJson(Map<String, dynamic> json) =>
           ? null
           : OnBoardingModel.fromJson(
               json['on_boarding'] as Map<String, dynamic>),
+      isOnBoardingSkipped: json['onboarding_skipped'] as bool?,
     )
       ..hasPromoTrial = json['has_promo_trial'] as bool?
       ..hasPromoRedeemed = json['has_promo_redeemed'] as bool?
@@ -739,6 +740,7 @@ Map<String, dynamic> _$UserOverallStatsToJson(UserOverallStats instance) {
   writeNotNull('last_video_played_seconds', instance.watchDuration);
   writeNotNull('last_video_played_date', instance.lastWatchDate);
   writeNotNull('is_survey', instance.isSurvey);
+  writeNotNull('onboarding_skipped', instance.isOnBoardingSkipped);
   return val;
 }
 
@@ -812,11 +814,9 @@ const _$PagesEnumMap = {
   Pages.studyHabitsKnowPage: 8,
   Pages.contractPage: 9,
   Pages.congratulationsPage: 10,
-  Pages.weUnderstandPage: 11,
-  Pages.studyTimePage: 12,
-  Pages.studyMaterialPage: 13,
-  Pages.freeTrialWorksPage: 14,
-  Pages.improvementPage: 15,
+  Pages.studyTimePage: 11,
+  Pages.studyMaterialPage: 12,
+  Pages.improvementPage: 13,
 };
 
 SubjectDifficultyRanking _$SubjectDifficultyRankingFromJson(
