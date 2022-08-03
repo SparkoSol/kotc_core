@@ -1052,6 +1052,7 @@ PreferencesModel _$PreferencesModelFromJson(Map<String, dynamic> json) =>
       showHardQuestions: json['show_hard_questions'] as bool?,
       showMediumQuestions: json['show_medium_questions'] as bool?,
       tutorMode: json['tutor_mode'] as bool?,
+      isEndless: json['is_endless'] as bool?,
     );
 
 Map<String, dynamic> _$PreferencesModelToJson(PreferencesModel instance) {
@@ -1074,6 +1075,7 @@ Map<String, dynamic> _$PreferencesModelToJson(PreferencesModel instance) {
   writeNotNull('show_medium_questions', instance.showMediumQuestions);
   writeNotNull('show_hard_questions', instance.showHardQuestions);
   writeNotNull('tutor_mode', instance.tutorMode);
+  writeNotNull('is_endless', instance.isEndless);
   return val;
 }
 
